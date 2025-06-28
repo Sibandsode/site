@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Video</title>
+  <style>
+    body { margin: 0; background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    video { max-width: 100vw; max-height: 100vh; border-radius: 12px; }
+  </style>
+</head>
+<body>
+   <video id="mainVideo" controls autoplay style="width:100vw;height:100vh;object-fit:cover;background:#000;">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <script>
+    // Unmute video after user interaction (for mobile)
+    const video = document.getElementById('mainVideo');
+    document.body.addEventListener('touchstart', () => { video.muted = false; }, {once:true});
+    document.body.addEventListener('click', () => { video.muted = false; }, {once:true});
+  </script>
+</body>
+</html>

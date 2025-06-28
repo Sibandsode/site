@@ -1,0 +1,123 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+   <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div>
+      <canvas id="testCanvas" width="550" height="500"></canvas>
+    </div>
+    <a href="https://createjs.com/" target="_blank"><div class="logo white"></div></a>
+  </body>
+  
+<script
+  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"></script>
+  <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1524180/codepen-template-1.0.js"></script>
+  <script src="script.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Wish</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+   <!-- Background music only on this page -->
+  <audio id="backgroundAudio" autoplay loop>
+    <source src="Infinite-Hearts-main/Song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div>
+    <canvas id="testCanvas"></canvas>
+  </div>
+
+  <!-- Floating Album Button -->
+  <button id="clickMeBtn" class="floating-btn">Click Me!</button>
+ 
+  <!-- Modal Album -->
+  <div id="albumModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Birthday Digital Album</h2>
+      <div class="album-gallery">
+        <!-- Replace the src with your own images -->
+        <img src="https://placekitten.com/200/200" alt="Photo 1">
+      </div>
+    </div>
+  </div>
+
+  <a href="https://createjs.com/" target="_blank"><div class="logo white"></div></a>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+  <script src="script.js"></script>
+  <!-- Background Audio -->
+<audio autoplay loop>
+  <audio id="backgroundAudio" autoplay loop>
+  <source src="Infinite-Hearts-main/Song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+const audio = document.getElementById('backgroundAudio');
+
+// Restore playback position
+const savedTime = localStorage.getItem('audioTime');
+if (savedTime) {
+  audio.currentTime = parseFloat(savedTime);
+}
+
+// Save playback position every second
+audio.addEventListener('timeupdate', function() {
+  localStorage.setItem('audioTime', audio.currentTime);
+});
+document.getElementById('clickMeBtn').onclick = function() {
+  window.open('video.html', '_blank');
+};
+
+// Simple password protection
+  (function() {
+    var correct = "nik"; // Change this to your password
+    var entered = "";
+    while (entered !== correct) {
+      entered = prompt("This site is private. Please enter the password:");
+      if (entered === null) {
+        // User cancelled, redirect or close
+        window.location.href = "https://www.google.com";
+        return;
+      }
+    }
+  })();
+</script>
+ <source src="Song.mp3" type="audio/mpeg">
+</audio>
+<button id="speakerBtn" aria-label="Toggle Music" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+">
+  <span id="speakerIcon" style="font-size: 22px;">🔊</span>
+</button>
+
+</body>
+</html>
+
