@@ -119,7 +119,7 @@ function init() {
     container.addChild(heart);
   }
 
-  var text = new createjs.Text("Sending Special wishes\n for a birthday\nthat is just as lovely, happy and sweet\n as you are! \n Happy Birthday Nikhil \n lots of loveee", "bold 24px Arial", "#312");
+  var text = new createjs.Text("GOOD LUCK", "bold 24px Arial", "#312");
   text.textAlign = "center";
   text.x = w / 2;
   text.y = h / 2 - text.getMeasuredLineHeight();
